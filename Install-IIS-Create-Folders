@@ -10,3 +10,9 @@ Add-Content -Path "C:\inetpub\wwwroot\Default.htm" -Value "TESTE $($env:computer
 # Configurar a URL dos Paths
 New-Item -ItemType directory -Path "C:\inetpub\wwwroot\images"
 New-Item -ItemType directory -Path "C:\inetpub\wwwroot\video"
+
+# Configurar Paginas baseadas no Path
+$imagesvalue = "Testes -Path Images - $($env:computername)"
+Add-Content -Path "C:\inetpub\wwwroot\images\default.htm" -Value $imagesvalue
+$videovalue = "Testes -Path Video - $($env:computername)"
+Add-Content -Path "C:\inetpub\wwwroot\video\default.htm" -Value $videovalue
